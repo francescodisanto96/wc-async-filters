@@ -219,12 +219,6 @@ e restituisce la lista delle tassonomie che hanno almeno un termine associato
 a quei prodotti. Il JavaScript nasconde tutti i filtri non presenti in quella lista.
 Questo evita di mostrare filtri che non porterebbero ad alcun risultato.
 
-### Select2 in modalità AJAX
-
-Le dropdown dei filtri non caricano tutte le opzioni all'avvio, ma le richiedono
-al server man mano che l'utente digita. Questo è più efficiente con cataloghi grandi
-e permette la ricerca testuale all'interno dei termini di ogni filtro.
-
 ### Generare il file .pot per le traduzioni
 
 Se vuoi tradurre il plugin in un'altra lingua, installa WP-CLI e dalla
