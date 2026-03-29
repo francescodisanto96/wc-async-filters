@@ -108,7 +108,7 @@
 		// Filtriamo solo le tassonomie abilitate dall'admin e le ordiniamo
 		// secondo il campo 'order' configurato nella pagina admin.
 		const sorted = Object.entries( taxonomies )
-			.filter( ( [ , config ] ) => config.enabled === true )
+			.filter( ( [ , config ] ) => config.enabled === true || config.enabled === '1' || config.enabled === 1 )
 			.sort( ( a, b ) => ( a[ 1 ].order || 0 ) - ( b[ 1 ].order || 0 ) );
 
 		sorted.forEach( ( [ slug ] ) => {
