@@ -1,0 +1,163 @@
+/*
+ * WC Async Filters — frontend.css
+ *
+ * Gestisce il layout della pagina shop: sidebar filtri a sinistra
+ * e griglia prodotti a destra. Include l'overlay di loading
+ * durante le chiamate AJAX e il layout responsive per mobile.
+ */
+
+/* Layout principale — Flexbox a due colonne -------------------------------- */
+
+.wcaf-layout {
+   display: flex;
+   gap: 2rem;
+   align-items: flex-start;
+}
+
+.wcaf-sidebar {
+   width: 25%;
+   flex-shrink: 0;
+}
+
+/*
+ * position: relative è necessario per l'overlay di loading.
+ * L'overlay usa position: absolute e si posiziona rispetto
+ * a questo elemento — senza relative, coprirebbe l'intera pagina.
+ */
+.wcaf-main {
+   flex: 1;
+   position: relative;
+}
+
+/* Filtri nella sidebar ----------------------------------------------------- */
+
+.wcaf-filter-item {
+   margin-bottom: 1.5rem;
+}
+
+.wcaf-filter-item label {
+   display: block;
+   font-weight: 600;
+   margin-bottom: 0.4rem;
+   font-size: 0.875rem;
+   color: #333;
+}
+
+/* !important necessario: Select2 imposta la larghezza tramite stile inline. */
+.wcaf-filter-item .select2-container {
+   width: 100% !important;
+}
+
+/* Overlay di loading ------------------------------------------------------- */
+
+/*
+ * Usiamo ::after invece di un elemento HTML per non toccare il DOM.
+ * Si attiva aggiungendo la classe "loading" con JavaScript.
+ * inset: 0 equivale a top/right/bottom/left: 0 — copre tutto .wcaf-main.
+ */
+.wcaf-main.loading::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(255, 255, 255, 0.75);
+   z-index: 10;
+   cursor: wait;
+}
+
+/* Griglia prodotti --------------------------------------------------------- */
+
+#wcaf-products-grid {
+   display: grid;
+   min-height: 200px;
+}
+
+/*
+ * WooCommerce usa float e width sui singoli prodotti per il layout.
+ * Sovrascriviamo con CSS Grid che è più moderno e prevedibile.
+ * !important serve per sovrascrivere gli stili di WooCommerce.
+ */
+#wcaf-products-grid ul.products {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.5rem;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+#wcaf-products-grid ul.products li.product {
+   margin: 0;
+   float: none !important;
+   width: 100% !important;
+}
+
+/* WooCommerce aggiunge ::before e ::after per il clearfix (tecnica obsoleta).
+   Con CSS Grid non servono. */
+#wcaf-products-grid ul.products::before,
+#wcaf-products-grid ul.products::after {
+   display: none !important;
+   content: none !important;
+}
+
+/* Messaggio nessun prodotto ------------------------------------------------ */
+
+.wcaf-no-products {
+   text-align: center;
+   padding: 3rem 1rem;
+   color: #666;
+   font-size: 1rem;
+}
+
+/* Pulsante Load More ------------------------------------------------------- */
+
+#wcaf-load-more-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 2rem;
+   padding: 1rem;
+}
+
+#wcaf-load-more {
+   display: inline-block;
+   padding: 0.75rem 2rem;
+   background: #333;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 1rem;
+   transition: background 0.2s ease;
+}
+
+#wcaf-load-more:hover {
+   background: #555;
+}
+
+/* Responsive --------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+   #wcaf-products-grid ul.products {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+/* Su mobile la sidebar va sopra la griglia, entrambe a larghezza piena. */
+@media (max-width: 768px) {
+   .wcaf-layout {
+      flex-direction: column;
+   }
+
+   .wcaf-sidebar {
+      width: 100%;
+   }
+
+   .wcaf-filter-item {
+      margin-bottom: 1rem;
+   }
+
+   #wcaf-products-grid ul.products {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+   }
+}

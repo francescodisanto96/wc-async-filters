@@ -1,0 +1,110 @@
+# Copyright (C) 2026 Francesco Di Santo
+# This file is distributed under the same license as the WC Async Filters plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WC Async Filters 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-async-filters\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-27T22:32:29+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wc-async-filters\n"
+
+#. Plugin Name of the plugin
+#: wc-async-filters.php
+msgid "WC Async Filters"
+msgstr ""
+
+#. Description of the plugin
+#: wc-async-filters.php
+msgid "Aggiunge filtri asincroni basati su tassonomie allo shop WooCommerce"
+msgstr ""
+
+#. Author of the plugin
+#: wc-async-filters.php
+msgid "Francesco Di Santo"
+msgstr ""
+
+#: includes/class-admin.php:56
+#: includes/class-admin.php:57
+msgid "Filtri Asincroni"
+msgstr ""
+
+#: includes/class-admin.php:173
+msgid "Permessi insufficienti."
+msgstr ""
+
+#: includes/class-admin.php:186
+msgid "Filtri Asincroni - Configurazione"
+msgstr ""
+
+#: includes/class-admin.php:194
+msgid "Abilita"
+msgstr ""
+
+#: includes/class-admin.php:195
+msgid "Tassonomia"
+msgstr ""
+
+#: includes/class-admin.php:196
+msgid "Ordine"
+msgstr ""
+
+#: includes/class-admin.php:227
+msgid "Impostazioni griglia"
+msgstr ""
+
+#: includes/class-admin.php:232
+msgid "Prodotti per pagina"
+msgstr ""
+
+#: includes/class-admin.php:245
+msgid "Numero di prodotti mostrati nella griglia prima del pulsante Load More. Min 1, max 100."
+msgstr ""
+
+#: includes/class-ajax-handler.php:75
+#: includes/class-ajax-handler.php:178
+msgid "Richiesta non autorizzata."
+msgstr ""
+
+#: includes/class-ajax-handler.php:133
+#: includes/class-plugin.php:143
+msgid "Nessun prodotto trovato."
+msgstr ""
+
+#: includes/class-ajax-handler.php:186
+msgid "Tassonomia non valida."
+msgstr ""
+
+#: includes/class-plugin.php:141
+#: templates/shop.php:79
+msgid "Carica altri prodotti"
+msgstr ""
+
+#: includes/class-plugin.php:142
+msgid "Caricamento..."
+msgstr ""
+
+#: includes/class-plugin.php:150
+msgid "Categoria prodotto"
+msgstr ""
+
+#: includes/class-plugin.php:151
+msgid "Tag prodotto"
+msgstr ""
+
+#: includes/class-plugin.php:152
+msgid "Tipo prodotto"
+msgstr ""
+
+#: templates/shop.php:44
+msgid "Filtra per"
+msgstr ""
+
+#: wc-async-filters.php:70
+msgid "WC Async Filters richiede WooCommerce attivo e installato."
+msgstr ""
