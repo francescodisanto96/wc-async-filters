@@ -103,7 +103,7 @@ abbigliamento, scarpe e accessori di brand come Nike, Adidas, Zara, Gucci e altr
 Per importarli:
 
 1. Vai su **wp-admin → Prodotti → Importa** (pulsante in alto a destra)
-2. Carica il file `wc-fashion-import-v4.csv`
+2. Carica il file `wc-product-import.csv`
 3. Nella schermata di mappatura, verifica che le colonne siano associate
    correttamente ai campi WooCommerce (di solito vengono riconosciute in automatico)
 4. Clicca **Avvia importazione**
